@@ -1,85 +1,50 @@
 module.exports = {
     siteMetadata: {
-        title: 'Gatsby + Netlify CMS Starter',
-        description:
-            'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+        siteTitle: `Rocket Docs`,
+        defaultTitle: `Rocket Docs`,
+        siteTitleShort: `Rocket Docs`,
+        siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
+        siteUrl: `https://rocketdocs.netlify.app`,
+        siteAuthor: `@jpedroschmitz`,
+        siteImage: `/banner.png`,
+        siteLanguage: `en`,
+        themeColor: `#8257E6`,
+        basePath: `/`,
     },
-    pathPrefix: '/docs/apollo-server',
+    flags: { PRESERVE_WEBPACK_CACHE: true },
     plugins: [
         {
-            resolve: 'gatsby-theme-apollo-docs',
+            resolve: `@rocketseat/gatsby-theme-docs`,
             options: {
-                root: __dirname,
-                subtitle: 'Apollo Server',
-                description: 'A guide to using Apollo Server',
-                contentDir: 'src/pages',
-                baseUrl: 'https://test-document.docs.colby.com',
-                sidebarCategories: {
-                    null: ['index', 'getting-started', 'whats-new'],
-                    Features: ['features/mocking', 'features/errors', 'features/data-sources'],
-                },
-            },
-        },
-        'gatsby-plugin-react-helmet',
-        {
-            resolve: 'gatsby-plugin-sass',
-            options: {
-                sassOptions: {
-                    indentedSyntax: true,
-                },
+                configPath: `src/config`,
+                docsPath: `src/docs`,
+                repositoryUrl: `https://github.com/jpedroschmitz/rocketdocs`,
+                baseDir: `examples/gatsby-theme-docs`,
             },
         },
         {
-            // keep as first gatsby-source-filesystem plugin for gatsby image support
-            resolve: 'gatsby-source-filesystem',
+            resolve: `gatsby-plugin-manifest`,
             options: {
-                path: `${__dirname}/static/img`,
-                name: 'uploads',
+                name: `Rocket Docs`,
+                short_name: `Rocket Docs`,
+                start_url: `/`,
+                background_color: `#ffffff`,
+                display: `standalone`,
+                icon: `static/favicon.png`,
             },
         },
+        `gatsby-plugin-sitemap`,
+        // {
+        //   resolve: `gatsby-plugin-google-analytics`,
+        //   options: {
+        //     trackingId: `YOUR_ANALYTICS_ID`,
+        //   },
+        // },
+        `gatsby-plugin-remove-trailing-slashes`,
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve: `gatsby-plugin-canonical-urls`,
             options: {
-                path: `${__dirname}/src/pages`,
-                name: 'pages',
-            },
-        },
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                path: `${__dirname}/src/img`,
-                name: 'images',
-            },
-        },
-        `gatsby-plugin-image`,
-        'gatsby-plugin-sharp',
-        'gatsby-transformer-sharp',
-        {
-            resolve: 'gatsby-transformer-remark',
-            options: {
-                plugins: [
-                    {
-                        resolve: 'gatsby-remark-relative-images',
-                        options: {
-                            name: 'uploads',
-                        },
-                    },
-                    {
-                        resolve: 'gatsby-remark-images',
-                        options: {
-                            // It's important to specify the maxWidth (in pixels) of
-                            // the content container as this plugin uses this as the
-                            // base for generating different widths of each image.
-                            maxWidth: 2048,
-                        },
-                    },
-                    {
-                        resolve: 'gatsby-remark-copy-linked-files',
-                        options: {
-                            destinationDir: 'static',
-                        },
-                    },
-                ],
+                siteUrl: `https://rocketdocs.netlify.app`,
             },
         },
         {
@@ -88,13 +53,7 @@ module.exports = {
                 modulePath: `${__dirname}/src/cms/cms.js`,
             },
         },
-        {
-            resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-            options: {
-                develop: true, // Activates purging in npm run develop
-                purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
-            },
-        }, // must be after other CSS plugins
         'gatsby-plugin-netlify', // make sure to keep it last in the array
+        `gatsby-plugin-offline`,
     ],
 };
