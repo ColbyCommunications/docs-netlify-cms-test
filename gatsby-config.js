@@ -4,7 +4,33 @@ module.exports = {
     description:
       "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
   },
+  pathPrefix: '/docs/apollo-server',
   plugins: [
+    {
+      resolve: 'gatsby-theme-apollo-docs',
+      options: {
+        root: __dirname,
+        subtitle: 'Apollo Server',
+        description: 'A guide to using Apollo Server',
+        githubRepo: 'apollographql/apollo-server',
+        defaultVersion: '2',
+        versions: {
+          '1': 'version-1'
+        },
+        sidebarCategories: {
+          null: [
+            'index',
+            'getting-started',
+            'whats-new'
+          ],
+          Features: [
+            'features/mocking',
+            'features/errors',
+            'features/data-sources'
+          ]
+        }
+      }
+    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sass",
