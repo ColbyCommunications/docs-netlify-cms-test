@@ -1,27 +1,23 @@
 const escapeStringRegexp = require('escape-string-regexp');
 
-const pagePath = `pages`;
-const indexName = `Identity Site`;
+const pagePath = `content`;
+const indexName = `Docs Test`;
 
 const pageQuery = `{
-  pages: allMdx(
-    filter: {
-      fileAbsolutePath: { regex: "/${escapeStringRegexp(pagePath)}/" },
-    }
-  ) {
-    edges {
-      node {
-        id
-        frontmatter {
-          title
-          uri
-          keywords
-        }
-        slug
-        excerpt(pruneLength: 5000)
+  pages: allMarkdownRemark (
+      filter: {
+        fileAbsolutePath: { regex: "/${escapeStringRegexp(pagePath)}/" },
       }
+    ) {
+        edges {
+            node {
+                frontmatter {
+                    title
+                }
+                html
+            }
+        }
     }
-  }
 }`;
 
 function pageToAlgoliaRecord({ node: { id, frontmatter, fields, ...rest } }) {
