@@ -16,12 +16,11 @@ collections:
   - name: "pages"
     label: "Pages"
     create: true
-    slug: "{{fields.slug}}",
+    slug: "{{fields.slug}}"
     folder: "content"
     fields:
-      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-
-      
+      - { label: "Slug",  name: "slug", widget: "string", required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters'], hint: "The post URL (do not include folder or file extension)" }
     
