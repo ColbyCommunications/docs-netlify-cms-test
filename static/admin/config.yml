@@ -16,10 +16,11 @@ collections:
   - name: "pages"
     label: "Pages"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}",
     folder: "content"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { name: "slug", label: "Slug", widget: "hidden" },
     
