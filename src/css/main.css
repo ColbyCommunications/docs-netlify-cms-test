@@ -1,0 +1,443 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.heading-inner {
+    @apply text-xl;
+}
+
+h3 {
+    @apply text-lg;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.none {
+    @apply hidden;
+}
+
+.search-screen {
+    position: absolute;
+    overflow-y: scroll;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    width: 100%;
+    z-index: 9;
+}
+.menu-screen {
+    position: absolute;
+    overflow-y: scroll;
+    height: calc(100vh - 113px);
+    background-color: #fff;
+    width: 100%;
+    z-index: 9;
+}
+
+.dropdown .dropdown-menu a {
+    display: inline-block;
+    @apply w-full;
+    @apply h-full;
+    @apply py-1;
+    @apply px-4;
+}
+
+.dropdown:hover .dropdown-menu > ul,
+.sub-dropdown:hover .sub-dropdown-menu > ul {
+    background-color: #edeced;
+}
+
+.dropdown:hover .dropdown-menu > ul > li:hover > a {
+    color: #fff !important;
+    background-color: #002878;
+}
+
+.sub-dropdown:hover .sub-dropdown-menu > ul > li:hover {
+    color: #fff !important;
+    background-color: #002878;
+}
+
+.dropdown-closed > a::after {
+    content: ' ';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+}
+.dropdown-open > a::after {
+    content: ' ';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+}
+
+.sub-dropdown-menu ul {
+    padding-left: 10px;
+}
+
+.colby-identity-secondary-nav-links-container {
+    justify-content: flex-end;
+}
+
+.colby-identity-secondary-nav-links-container > div {
+    cursor: pointer;
+    position: relative;
+}
+
+.colby-identity-secondary-nav-links-container > div > div > a {
+    font-size: 1.2rem;
+    display: inline-block;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.colby-identity-secondary-nav-links-container a.active {
+    color: #002878;
+    font-weight: bold;
+}
+
+.colby-identity-secondary-nav-links-container > div > a:hover:after,
+.colby-identity-secondary-nav-links-container > div > a.active:after {
+    content: '';
+    background: #b1afaf;
+    height: 3px;
+    width: 100%;
+    transition: width 1s;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+.hero {
+    @apply pt-8;
+    @apply pb-4;
+}
+
+.our-brand-item {
+    padding: 20px;
+}
+.our-brand-item:hover {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15), 3px 5px 7px 0 rgba(0, 0, 0, 0.07);
+}
+
+.large-button {
+    padding: 20px 20px 30px 20px;
+}
+
+.large-button:hover {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15), 3px 5px 7px 0 rgba(0, 0, 0, 0.07);
+}
+
+.identity-button {
+    color: white !important;
+}
+
+.current-page {
+    color: #002878;
+    font-weight: bold;
+    position: relative;
+}
+.current-page::before {
+    content: ' ';
+    background-color: #002878;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 8px;
+    left: -11px;
+}
+
+.identity-quicklink > div:first-child {
+    width: 20%;
+    @apply mr-4;
+}
+
+.identity-quicklink > div:nth-child(2) {
+    width: 80%;
+}
+.identity-quicklink-learn-more a::after,
+.cantoBox a::after {
+    content: ' ';
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    background-image: url("data:image/svg+xml,%3Csvg width='0.6em' height='0.6em' viewBox='0 0 16 16' class='bi bi-chevron-double-right' fill='%23002878' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3Cpath fill-rule='evenodd' d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    vertical-align: 1%;
+    margin-left: 8px;
+}
+
+.search-result .read-more::after {
+    content: ' ';
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    background-image: url("data:image/svg+xml,%3Csvg width='0.6em' height='0.6em' viewBox='0 0 16 16' class='bi bi-chevron-double-right' fill='%23d95900' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3Cpath fill-rule='evenodd' d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    vertical-align: 1%;
+    margin-left: 8px;
+}
+
+.identity-footer a:hover,
+.identity-quicklink a:hover,
+.cantoBox a:hover {
+    text-decoration: underline;
+}
+
+.inner-toc {
+    z-index: 1;
+}
+.inner-toc ul {
+    list-style: none !important;
+}
+.inner-toc > div > ul > li {
+    font-weight: bold;
+    color: #002878;
+}
+.automenu {
+    padding-left: 1rem;
+}
+
+.automenu li {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 400;
+}
+
+.automenu ul {
+    padding-left: 10px;
+}
+
+.automenu ul li a.is-current {
+    color: #000;
+}
+
+.content-container h3,
+.content-container h4 {
+    padding-top: 114px;
+    margin-top: -100px;
+}
+
+.content-container .our-brand-page h3,
+.content-container .our-brand-page h4 {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.content-container h2 {
+    padding-top: 114px;
+    margin-top: -85px;
+}
+.content-container .our-brand-page h2 {
+    padding-top: 0;
+    margin-top: 1.5rem;
+}
+
+.content-container a,
+.contact-page a {
+    color: #002878;
+    text-decoration: underline;
+}
+
+.content-container a.section-cta,
+a.section-cta-obfuscated {
+    color: #d95900;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a.section-cta-obfuscated {
+    text-decoration: underline;
+}
+
+.content-container a.section-cta::after {
+    content: ' ';
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    background-image: url("data:image/svg+xml,%3Csvg width='0.6em' height='0.6em' viewBox='0 0 16 16' class='bi bi-chevron-double-right' fill='%23d95900' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3Cpath fill-rule='evenodd' d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    vertical-align: -4%;
+    margin-left: 8px;
+}
+
+/* Logo Adjustments */
+
+.colby-mark-logo {
+    width: 35%;
+}
+.colby-athletics-logo {
+    width: 60%;
+}
+
+.bot-logo,
+.dn-logo,
+.sustainable-colby-logo {
+    width: 50%;
+}
+
+.buck-logo,
+.oak-logo {
+    width: 80%;
+}
+.goldfarb-logo,
+.dc-logo,
+.libraries-logo,
+.cah-logo {
+    width: 70%;
+}
+
+.sub-brand-logo:hover > img {
+    opacity: 0.5;
+}
+
+.logo-select__control:hover {
+    border-color: transparent !important;
+}
+
+.img-hover-zoom img {
+    transition: transform 0.2s ease;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.01);
+}
+
+.typography-page img {
+    @apply my-8;
+}
+
+.scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    align-items: center;
+    height: 40px;
+    justify-content: center;
+    z-index: 9;
+    cursor: pointer;
+}
+.scrollTop svg {
+    fill: #000;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.4s;
+    opacity: 0.5;
+}
+
+.scrollTop svg:hover {
+    opacity: 1;
+}
+
+.icon .icon-download {
+    display: none;
+}
+
+.icon:hover > div,
+.icon:focus > div {
+    padding-bottom: 0;
+}
+.icon:hover .icon-download,
+.icon:focus .icon-download {
+    display: flex;
+}
+
+.teammember:first-of-type {
+    @apply mt-10;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite, fadeIn ease-in 1s;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-3px);
+    }
+    60% {
+        transform: translateY(-1px);
+    }
+}
+
+@media (min-width: 640px) {
+    .dropdown::after {
+        content: '';
+        background: none;
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        min-width: 200px;
+        display: block;
+    }
+
+    .sub-dropdown:hover .sub-dropdown-menu {
+        min-width: 200px;
+        display: block;
+    }
+
+    .colby-identity-secondary-nav-links-container {
+        cursor: pointer;
+        position: relative;
+        justify-content: flex-start;
+    }
+    .colby-identity-secondary-nav-links-container > div > a {
+        font-size: 1.1rem;
+        display: block;
+        height: 100%;
+        padding: 0.5rem;
+    }
+
+    .hero {
+        background-image: url('/images/ColbyBacc2017-014.jpg');
+        background-size: cover;
+        height: calc(100vh - 111px);
+        background-position: 50% 40%;
+    }
+}
+
+@media (min-width: 768px) {
+    .colby-identity-secondary-nav-links-container > div > a {
+        font-size: 1.25rem;
+        display: block;
+        height: 100%;
+        padding: 0.5rem;
+    }
+
+    .sub-dropdown-menu ul {
+        padding-left: 0;
+    }
+}
+@media (min-width: 1024px) {
+    .automenu ul li a.is-current {
+        color: #e15630;
+    }
+}
