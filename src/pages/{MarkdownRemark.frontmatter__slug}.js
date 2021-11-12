@@ -30,7 +30,7 @@ export default function Template(props) {
                         <div className="mt-6">
                             <ScrollSpy
                                 siblings={props.data.allMarkdownRemark.edges.sort(function (a, b) {
-                                    return a.order - b.order;
+                                    return a.node.frontmatter.order - b.node.frontmatter.order;
                                 })}
                                 tableOfContents={node.tableOfContents}
                                 currentPage={node}
@@ -39,7 +39,10 @@ export default function Template(props) {
                         </div>
                     </div>
                 </div>
-                <div id="content-container" className="col-span-1 md:col-span-10 lg:col-span-10">
+                <div
+                    id="content-container"
+                    className="col-span-1 md:col-span-10 lg:col-span-10 px-4"
+                >
                     <div>
                         <div>
                             <h1 className="text-3xl bold mb-10">{frontmatter.title}</h1>
