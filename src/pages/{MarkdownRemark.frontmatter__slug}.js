@@ -70,7 +70,6 @@ export const pageQuery = graphql`
                         value
                     }
                     tableOfContents
-                    html
                 }
             }
         }
@@ -83,6 +82,7 @@ export const pageQuery = graphql`
                 title
                 slug
             }
+            html
         }
     }
 `;
