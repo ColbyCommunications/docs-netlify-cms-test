@@ -2,11 +2,11 @@
 title: some other page
 date: 2021-11-11T17:45:15.900Z
 slug: some-other-page
-order: 2
+order: 3
 ---
-## Section A
+## Section 1
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Colby experience, as shaped by the College’s mission and precepts and other College initiatives, is characterized by intellectual challenge, a strong sense of community and a friendly campus atmosphere, international perspectives, and efforts to understand and embrace diversity.
 
 ### Section A1
 
