@@ -186,6 +186,21 @@ h2 {
     }
 }
 
+table {
+    @apply text-left w-full border-collapse my-8;
+}
+th {
+    @apply py-4 px-6 font-bold text-left text-lg border-b border-gray-100;
+    background-color: #002878;
+    color: #fff;
+}
+td {
+    @apply py-4 px-6 border-b border-gray-100;
+}
+thead {
+    @apply bg-gray-100;
+}
+
 @media (min-width: 640px) {
     .dropdown::after {
         content: '';

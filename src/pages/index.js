@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../layouts/page';
 
-const IndexPage = ({ data }) => <Layout>index page content</Layout>;
+const IndexPage = ({ location, data }) => <Layout location={location}>index page content</Layout>;
 
 export const query = graphql`
     query {

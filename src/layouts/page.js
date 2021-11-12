@@ -128,8 +128,13 @@ const PageLayout = (props) => {
                                 <div className="mt-6">
                                     <ScrollSpy
                                         siblings={props.data.allMarkdownRemark.edges}
-                                        tableOfContents={node.tableOfContents}
+                                        tableOfContents={
+                                            props.location.pathname === '/'
+                                                ? ''
+                                                : node.tableOfContents
+                                        }
                                         currentPage={node}
+                                        isHomepage={props.location.pathname === '/'}
                                     />
                                 </div>
                             </div>

@@ -78,6 +78,7 @@ const ScrollSpy = (props) => {
             return s.toUpperCase();
         });
     };
+    console.log(props);
 
     return (
         <>
@@ -102,15 +103,16 @@ const ScrollSpy = (props) => {
                             >
                                 {ucwords(sibling.node.frontmatter.title.replace('-', ' '))}
                             </Link>
-                            {sibling.node.frontmatter.slug ===
-                                props.currentPage.node.frontmatter.slug && (
-                                <div
-                                    style={{ paddingLeft: '20px', color: 'inherit' }}
-                                    dangerouslySetInnerHTML={{
-                                        __html: props.currentPage.node.tableOfContents,
-                                    }}
-                                />
-                            )}
+                            {!props.isHomepage &&
+                                sibling.node.frontmatter.slug ===
+                                    props.currentPage.node.frontmatter.slug && (
+                                    <div
+                                        style={{ paddingLeft: '20px', color: 'inherit' }}
+                                        dangerouslySetInnerHTML={{
+                                            __html: props.currentPage.node.tableOfContents,
+                                        }}
+                                    />
+                                )}
                         </li>
                     );
                 })}
