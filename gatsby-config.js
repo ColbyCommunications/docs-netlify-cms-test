@@ -9,8 +9,8 @@ require('dotenv').config();
 module.exports = {
     /* Your site config here */
     siteMetadata: {
-        title: `Test`,
-        description: `I love Gatsby!`,
+        title: `Student Handbook`,
+        description: `Documents test site`,
         author: `Brandon Waltz,`,
     },
     plugins: [
@@ -68,7 +68,12 @@ module.exports = {
                 path: `${__dirname}/content`,
             },
         },
-        `gatsby-transformer-remark`,
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [`gatsby-remark-autolink-headers`],
+            },
+        },
         `@dream-bit-de/gatsby-plugin-better-page-tree`,
         /*{
             resolve: `gatsby-plugin-algolia`,

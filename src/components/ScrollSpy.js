@@ -86,29 +86,30 @@ const ScrollSpy = (props) => {
                     return (
                         <li
                             className={`text-2xl md:text-base ${
-                                sibling.pathRaw === props.currentPage ? 'current-page' : ''
+                                sibling.node.frontmatter.slug === props.currentPage
+                                    ? 'current-page'
+                                    : ''
                             }`}
                             key={i}
                         >
-                            {sibling.name === 'Editorial style-guide' && (
-                                <Link
-                                    to={`http://www.colby.edu/communicationsoffice/style/editorial/`}
-                                >
-                                    {ucwords(sibling.name.replace('-', ' '))}
-                                </Link>
-                            )}
-                            {sibling.name !== 'Editorial style-guide' && (
-                                <Link
-                                    to={sibling.pathRaw}
-                                    activeClassName={`${
-                                        sibling.pathRaw === props.currentPage ? '' : 'current-page'
-                                    }`}
-                                >
-                                    {ucwords(sibling.name.replace('-', ' '))}
-                                </Link>
-                            )}
-                            {sibling.pathRaw === props.currentPage && (
-                                <TableOfContents {...props} />
+                            <Link
+                                to={`/${sibling.node.frontmatter.slug}`}
+                                activeClassName={`${
+                                    sibling.node.frontmatter.slug === props.currentPage
+                                        ? ''
+                                        : 'current-page'
+                                }`}
+                            >
+                                {ucwords(sibling.node.frontmatter.title.replace('-', ' '))}
+                            </Link>
+                            {sibling.node.frontmatter.slug ===
+                                props.currentPage.node.frontmatter.slug && (
+                                <div
+                                    style={{ paddingLeft: '20px', color: 'inherit' }}
+                                    dangerouslySetInnerHTML={{
+                                        __html: props.currentPage.node.tableOfContents,
+                                    }}
+                                />
                             )}
                         </li>
                     );
