@@ -7,3 +7,5 @@ order: 3
 ## Section A
 
 Lorem ipsum dolor sit.
+
+![image](/img/chemex.jpg "ffdsafdsa")
