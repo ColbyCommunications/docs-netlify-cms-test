@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
 // import Footer from '../components/Footer';
-import ScrollSpy from '../components/ScrollSpy';
 
 import { graphql, StaticQuery } from 'gatsby';
 // import ScrollTopArrow from '../components/BackToTop';
@@ -10,24 +9,10 @@ import { graphql, StaticQuery } from 'gatsby';
 const LayoutWithQuery = (props) => (
     <StaticQuery
         query={graphql`
-            query getPageData {
+            query getLayoutData {
                 site {
                     siteMetadata {
                         title
-                    }
-                }
-                allMarkdownRemark {
-                    edges {
-                        node {
-                            frontmatter {
-                                title
-                                slug
-                            }
-                            headings {
-                                value
-                            }
-                            tableOfContents
-                        }
                     }
                 }
             }
@@ -94,16 +79,6 @@ const LayoutWithQuery = (props) => (
 // };
 
 const PageLayout = (props) => {
-    console.log(props);
-    const node = props.data.allMarkdownRemark.edges.find(
-        (node) => node.node.frontmatter.slug === props.location.pathname.substring(1)
-    );
-    console.log(node);
-    let headings = [];
-    if (node) {
-        headings = node.headings;
-    }
-
     return (
         <>
             <Helmet>
@@ -113,41 +88,7 @@ const PageLayout = (props) => {
             <Navbar title={props.data.site.siteMetadata.title} />
             <main style={{ marginTop: '116px' }} id="page-layout">
                 {' '}
-                <div className="mx-auto container">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-8">
-                        <div
-                            id="toc"
-                            className="col-span-1 hidden lg:block md:col-span-2 border-r border-gray-200"
-                        >
-                            <div>
-                                <div className="text-2xl bold underline">
-                                    {props.data.site.siteMetadata.title}
-                                </div>
-                            </div>
-                            <div className="sticky inner-toc" style={{ top: '8rem' }}>
-                                <div className="mt-6">
-                                    <ScrollSpy
-                                        siblings={props.data.allMarkdownRemark.edges}
-                                        tableOfContents={
-                                            props.location.pathname !== '/' &&
-                                            'tableOfContents' in node
-                                                ? node.tableOfContents
-                                                : ''
-                                        }
-                                        currentPage={node}
-                                        isHomepage={props.location.pathname === '/'}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            id="content-container"
-                            className="col-span-1 md:col-span-10 lg:col-span-10"
-                        >
-                            <div>{props.children}</div>
-                        </div>
-                    </div>
-                </div>
+                <div className="mx-auto container">{props.children}</div>
             </main>
         </>
     );

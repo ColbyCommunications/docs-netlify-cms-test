@@ -105,11 +105,11 @@ const ScrollSpy = (props) => {
                             </Link>
                             {!props.isHomepage &&
                                 sibling.node.frontmatter.slug ===
-                                    props.currentPage.node.frontmatter.slug && (
+                                    props.currentPage.frontmatter.slug && (
                                     <div
                                         className="inner"
                                         dangerouslySetInnerHTML={{
-                                            __html: props.currentPage.node.tableOfContents,
+                                            __html: props.currentPage.tableOfContents,
                                         }}
                                     />
                                 )}
