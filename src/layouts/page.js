@@ -130,7 +130,7 @@ const PageLayout = (props) => {
                                         siblings={props.data.allMarkdownRemark.edges}
                                         tableOfContents={
                                             props.location.pathname !== '/' &&
-                                            node.indexOf('tableOfContents') !== -1
+                                            'tableOfContents' in node
                                                 ? node.tableOfContents
                                                 : ''
                                         }
