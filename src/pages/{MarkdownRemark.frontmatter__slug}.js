@@ -70,6 +70,7 @@ export const pageQuery = graphql`
                         value
                     }
                     tableOfContents
+                    html
                 }
             }
         }

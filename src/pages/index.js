@@ -1,23 +1,9 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import { useEffect } from 'react';
+import { navigate } from '@reach/router';
 
-import Layout from '../layouts/page';
-
-const IndexPage = ({ location, data }) => <Layout location={location}>index page content</Layout>;
-
-export const query = graphql`
-    query {
-        allMarkdownRemark {
-            edges {
-                node {
-                    frontmatter {
-                        title
-                    }
-                    html
-                }
-            }
-        }
-    }
-`;
-
-export default IndexPage;
+export default () => {
+    useEffect(() => {
+        navigate('/introduction/');
+    }, []);
+    return null;
+};
