@@ -29,7 +29,9 @@ export default function Template(props) {
                     <div className="sticky inner-toc" style={{ top: '8rem' }}>
                         <div className="mt-6">
                             <ScrollSpy
-                                siblings={props.data.allMarkdownRemark.edges}
+                                siblings={props.data.allMarkdownRemark.edges.sort(function (a, b) {
+                                    return a.order - b.order;
+                                })}
                                 tableOfContents={node.tableOfContents}
                                 currentPage={node}
                                 isHomepage={props.location.pathname === '/'}
@@ -65,6 +67,7 @@ export const pageQuery = graphql`
                     frontmatter {
                         title
                         slug
+                        order
                     }
                     headings {
                         value
