@@ -131,7 +131,7 @@ const PageLayout = (props) => {
                                         tableOfContents={
                                             props.location.pathname === '/'
                                                 ? ''
-                                                : node.tableOfContents
+                                                : node.tableOfContents || ''
                                         }
                                         currentPage={node}
                                         isHomepage={props.location.pathname === '/'}
