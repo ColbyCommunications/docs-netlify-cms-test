@@ -87,20 +87,13 @@ const ScrollSpy = (props) => {
                     return (
                         <li
                             className={`text-2xl md:text-base ${
-                                sibling.node.frontmatter.slug === props.currentPage
+                                sibling.node.frontmatter.slug === props.currentPage.frontmatter.slug
                                     ? 'current-page'
                                     : ''
                             }`}
                             key={i}
                         >
-                            <Link
-                                to={`/${sibling.node.frontmatter.slug}`}
-                                activeClassName={`${
-                                    sibling.node.frontmatter.slug === props.currentPage
-                                        ? ''
-                                        : 'current-page'
-                                }`}
-                            >
+                            <Link to={`/${sibling.node.frontmatter.slug}`}>
                                 {ucwords(sibling.node.frontmatter.title.replace('-', ' '))}
                             </Link>
                             {!props.isHomepage &&
