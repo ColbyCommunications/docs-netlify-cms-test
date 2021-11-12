@@ -2,6 +2,7 @@
 title: Introduction
 date: 2021-11-12T17:11:38.127Z
 slug: introduction
+order: 1
 ---
 The Colby College Student Handbook is designed to introduce many of the aspects of life at Colby to you, including academic policies, rules and regulations, and safety tips. While few constraints are placed on Colby students, certain regulations are necessary for our community to function successfully and safely. You are expected to know and abide by these regulations, which are outlined in this handbook.
 
