@@ -129,6 +129,7 @@ const PageLayout = (props) => {
                                     <ScrollSpy
                                         siblings={props.data.allMarkdownRemark.edges}
                                         tableOfContents={
+                                            props.location.pathname !== '/' &&
                                             node.indexOf('tableOfContents') !== -1
                                                 ? node.tableOfContents
                                                 : ''
