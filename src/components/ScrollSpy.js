@@ -107,7 +107,7 @@ const ScrollSpy = (props) => {
                                 sibling.node.frontmatter.slug ===
                                     props.currentPage.node.frontmatter.slug && (
                                     <div
-                                        style={{ paddingLeft: '20px', color: 'inherit' }}
+                                        className="inner"
                                         dangerouslySetInnerHTML={{
                                             __html: props.currentPage.node.tableOfContents,
                                         }}

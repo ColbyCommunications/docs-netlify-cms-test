@@ -201,6 +201,15 @@ thead {
     @apply bg-gray-100;
 }
 
+#toc ul {
+    @apply pl-4;
+}
+
+#toc .inner a {
+    font-weight: 300;
+    @apply text-gray-500;
+}
+
 @media (min-width: 640px) {
     .dropdown::after {
         content: '';
