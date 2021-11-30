@@ -29,3 +29,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ### Section B2
 
 Voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+
+
+
+* Tampering with a smoke detector by covering it, disabling it, removing it, or hanging objects from it.
+* Students should contact Security as soon as possible to report a smoke detector that does not appear to be functional. • Using windows to enter or exit rooms.
+* Breaking or circumventing window locks.
