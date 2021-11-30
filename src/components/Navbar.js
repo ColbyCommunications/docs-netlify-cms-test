@@ -43,6 +43,26 @@ const Navbar = (props) => {
                                     <div className="ml-4">
                                         <button
                                             style={{
+                                                backgroundColor: '#fff',
+                                                color: '#002878',
+                                                padding: '5px 10px',
+                                                borderRadius: '5px',
+                                                border: '2px solid #002879',
+                                            }}
+                                        >
+                                            <a
+                                                href={`/img/${props.title
+                                                    .toLowerCase()
+                                                    .replace(/ /g, '_')}.pdf`}
+                                                download
+                                            >
+                                                Archive
+                                            </a>
+                                        </button>
+                                    </div>
+                                    <div className="ml-4">
+                                        <button
+                                            style={{
                                                 backgroundColor: '#002878',
                                                 color: '#fff',
                                                 padding: '5px 10px',
