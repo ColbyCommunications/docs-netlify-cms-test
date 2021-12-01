@@ -4,7 +4,7 @@ date: 2021-11-12T21:39:09.431Z
 slug: general-information
 order: 2
 ---
-## Notice
+## Notice1
 
 The reader should take notice that the Colby College Student Handbook is not a contract. The College provides the information herein solely for the convenience of the reader and reserves the right to make changes at any time without prior notice. 
 
