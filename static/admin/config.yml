@@ -1,8 +1,6 @@
 backend:
     name: git-gateway
 
-site_url: https://localhost:8000/
-
 branch: master
 commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
